@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login_page</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <form action="../" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="name" id="">
+        <br>
+        <input type="text" name="email" placeholder="email" id="">
+        <br>
+        <input type="text" name="username" placeholder="username" id="">
+        <br>
+        <input type="password" name="password" placeholder="password" id="">
+        <br>
+        <button type="submit">register</button>
+        <a href="login">login</a><br>
+        <a href="admlogin">login as admin</a>
+    </form>
+
+
+
+
+</body>
+
+</html>
