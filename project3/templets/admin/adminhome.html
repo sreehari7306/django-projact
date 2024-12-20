@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-home</title>
+</head>
+<body>
+    <h1> home</h1>
+   
+    <form action="../adminhomepage" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <select name="d" id="" class="form-control mt-1">
+                        <option selected disabled >--select your department--</option>
+                        {% for i in deps %}
+                            <option value="{{i.pk}}">{{i.dname}}</option>
+                        {% endfor %}    
+                    </select>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-success">Search</button>
+                    <a href="../">Add user</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% for i in emps %}
+        <div>
+            {{i.name}}
+            {{i.email}}
+            {{i.dname}}
+            {{i}}
+        </div>
+    {% endfor %}
+</body>
+</html>
